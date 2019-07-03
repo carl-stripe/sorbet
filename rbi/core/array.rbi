@@ -43,10 +43,10 @@ class Array < Object
     .returns(T::Array[Elem])
   end
   sig do
-    params(
-        arg0: T::Array[Elem],
+    type_parameters(:U).params(
+        arg0: T::Array[T.type_parameter(:U)],
     )
-    .returns(T::Array[Elem])
+    .returns(T::Array[T.any(Elem, T.type_parameter(:U))])
   end
   def +(arg0); end
 
